@@ -151,16 +151,31 @@ const EditProductPage = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleImageUpload = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setFormData(prev => ({ ...prev, image: reader.result }));
-            };
-            reader.readAsDataURL(file);
+    const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const formDataImage = new FormData();
+    formDataImage.append('product', file); // Must match multer's `.single('product')`
+
+    try {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/upload`, {
+            method: 'POST',
+            body: formDataImage,
+        });
+
+        const data = await res.json();
+
+        if (data.success && data.image_url) {
+            setFormData(prev => ({ ...prev, image: data.image_url }));
+        } else {
+            setError('Image upload failed.');
         }
-    };
+    } catch (err) {
+        console.error('Upload failed:', err);
+        setError('Image upload failed.');
+    }
+};
     
     const handleSubmit = async (e) => {
         e.preventDefault();
