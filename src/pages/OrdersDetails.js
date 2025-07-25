@@ -72,6 +72,12 @@ const OrderTable = styled.table`
   }
 `;
 
+const TableWrapper = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 40px;
+`;
+
 const ProfileCard = styled.div`
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -267,7 +273,8 @@ const cancelOrder = async (e) => {
           <h1 style={{fontSize:'40px'}}>Item List</h1>
         </ProfileHeader>
 
-        <OrderTable>
+        <TableWrapper>
+          <OrderTable>
           <thead>
             <tr style={{fontSize:'20px'}}>
               <th>Product ID</th>
@@ -298,7 +305,8 @@ const cancelOrder = async (e) => {
                     </tr>
           </tbody>
         </OrderTable>
-        
+        </TableWrapper>
+
         {currentUser.role === 'Admin' ? (
           <ProfileCard>
             <form onSubmit={handleSubmit}>

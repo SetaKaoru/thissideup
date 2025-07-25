@@ -56,9 +56,11 @@ const OrderTable = styled.table`
   }
 `;
 
-
-
-
+const TableWrapper = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 40px;
+`;
 
 const OrdersPage = () => {
   const navigate = useNavigate();
@@ -91,7 +93,8 @@ const OrdersPage = () => {
           {currentUser.role === 'Customer' ? <h1>My Orders</h1>:''}
         </ProfileHeader>
 
-        {currentUser.role === 'Admin' ? (
+        <TableWrapper>
+          {currentUser.role === 'Admin' ? (
           <OrderTable>
           <thead>
             <tr style={{fontSize:'20px'}}>
@@ -140,6 +143,9 @@ const OrdersPage = () => {
             </tbody>
           </OrderTable>
         ) : ''}
+        </TableWrapper>
+
+        
       </ProfileContainer>
     </PageWrapper>
   );
