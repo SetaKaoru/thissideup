@@ -12,7 +12,7 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
 // app.use(cors());
 app.use(cors({
-  origin: 'https://thissideup-react.onrender.com',
+  origin: 'https://thissideup-gules.vercel.app',
   credentials: true
 }));
 app.use(express.json());
