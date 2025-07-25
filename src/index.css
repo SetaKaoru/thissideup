@@ -1,0 +1,715 @@
+/* File: public/index.css or src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap');
+/* Define CSS Custom Properties (Variables) based on the theme */
+#font1 {
+  font-family: "Inria Serif", serif;
+  font-weight: bold;
+}
+#font2 {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#searchHeader {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+
+.font25 {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#fontProduct {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight:600;
+  font-size: 16px;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#overlayHeader{
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: bolder;
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  letter-spacing: 1px;
+}
+
+#skimboardPreview{
+  filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.45));
+}
+
+#overlayButton{
+  background-color: #a33dbd;
+  border-radius: 0;
+  letter-spacing: 1px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  box-shadow: 2px 2px 4px #797979;;
+}
+
+#overlayButton:hover{
+  background-color: #814181;
+}
+
+#icon {
+  margin-left: 8px;
+}
+
+.about{
+  font-family: "Inria Serif", serif;
+  font-weight: bold;
+  font-size: 24;
+}
+
+#buttonSlideshow {
+  color: #7600AD;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+#longpara {
+  line-height: 25px;
+}
+
+#link{
+  display: 'block';
+  padding: '0.75rem 1rem 0rem 0.75rem';
+  padding-left: 30px;
+  padding-bottom: 10px;
+  text-decoration: 'none';
+  color: 'white';
+  font-family: 'Instrument Sans, -apple-system, BlinkMacSystemFont, sans-serif';
+  font-size: 20px;
+}
+
+.no-border {
+  border: none !important;
+}
+
+#search {
+  height: 40px;
+  align-self: center;
+  box-sizing: border-box;
+  padding: 10px 40px 10px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+  position: relative;
+  bottom: 27px;
+  right: auto;
+}
+
+#qn {
+  font-family: "Inria Serif", serif;
+  font-weight: bold;
+  width: 706px;
+  margin: auto;
+  text-align: left;
+  padding-left: 27px;
+  font-size: 24px;
+  background-color: #78405B;
+  color: white;
+  border-radius: 24px 24px 0px 0px;
+  height: 66px;
+  line-height: 66px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 28px;
+  align-self:center;
+  cursor: pointer;
+}
+
+#qnAns {
+  font-family: "Inria Serif", serif;
+  font-weight: bold;
+  width: 706px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: left;
+  padding-left: 27px;
+  font-size: 20px;
+  background-color: #be6892;
+  border-radius: 0px 0px 24px 24px;
+  color: white;
+  height: auto;
+  line-height: 66px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 0px;
+  align-self:center;
+}
+
+input {
+  margin-top: 105px;
+  margin-bottom: 40px;
+  width: 706px;
+  height: 61px;
+  color: white;
+  border-radius: 50px;
+}
+
+
+
+.shopping-cart-page-container {
+  background-color: #000000; /* Pure black page background */
+  color: #FFFFFF;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  padding: 40px 20px; /* Overall padding for the page content */
+  box-sizing: border-box;
+  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Default font */
+}
+
+.shopping-cart-main-content {
+  max-width: 1200px; /* Max width for the content area */
+  margin: 0 auto;   /* Center the content area */
+}
+
+.cart-title-section {
+  text-align: center;
+  margin-bottom: 30px; /* Space below "Total price:" */
+}
+
+.cart-main-title {
+  font-family: 'Inria Serif', Georgia, 'Times New Roman', Times, serif; /* Font from Figma */
+  font-size: clamp(40px, 6vw, 56px); /* Responsive title size */
+  font-weight: normal; /* As per Figma text styling */
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.cart-main-title::after {
+  content: '';
+  display: block;
+  width: 150px; /* Width of the underline */
+  height: 2px;
+  background-color: #BE7D4D; /* Brownish-orange underline color from Figma */
+  margin: 15px auto 0; /* Spacing and centering of the underline */
+}
+
+.total-price-display {
+  font-family: 'Instrument Sans', sans-serif; /* Font from Figma */
+  font-size: clamp(20px, 4vw, 28px); /* Responsive total price text */
+  color: #FFFFFF;
+  margin-top: 20px; /* Space above this text */
+  margin-bottom: 40px; /* Space below this text, before item grid */
+}
+
+.cart-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 25px; /* Gap between cards */
+  margin-bottom: 50px; /* Space before the checkout button */
+}
+
+@media (min-width: 768px) {
+  .cart-items-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+@media (min-width: 1024px) {
+  .cart-items-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktops */
+  }
+}
+
+.empty-cart-message {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 50px 0;
+  color: #CCCCCC;
+}
+.empty-cart-message a {
+  color: #FFB366; /* Peach color for link */
+  text-decoration: underline;
+}
+
+
+.cart-item-card {
+  background-color: #2C003E;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px dotted rgba(147, 0, 255, 0.45);
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-checkbox-input { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.custom-checkbox-label { 
+  min-width: 22px; 
+  width: 22px;
+  height: 22px;
+  background-color: #4B4B4B; 
+  border: 1px solid #6F6F6F; 
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.custom-checkbox-input:checked + .custom-checkbox-label {
+  background-color: #9300FF; 
+  border-color: #9300FF; 
+}
+
+.custom-checkbox-input:focus-visible + .custom-checkbox-label {
+  outline: 2px solid #FFB366; /* Accessibility focus outline */
+  outline-offset: 2px;
+}
+
+.custom-checkbox-input:checked + .custom-checkbox-label::after {
+  content: '✔'; 
+  color: white;
+  font-size: 15px; 
+}
+
+.item-name {
+  flex-grow: 1; /* Allows the name to take up remaining space */
+  font-size: 1rem; /* 16px default */
+  font-family: 'Instrument Sans', sans-serif;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis; /* For long names */
+  line-height: 1.4; /* Improve readability */
+}
+
+/* If you add a remove button inside item-header */
+.remove-item-button { 
+  background: none;
+  border: none;
+  color: #FF8A80;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 5px;
+  line-height: 1;
+  margin-left: auto; /* Pushes it to the right if space allows */
+}
+.remove-item-button:hover {
+  color: #FF5252;
+}
+
+
+.item-body {
+  display: flex;
+  
+  justify-content: space-between; /* Pushes image/price left, quantity right */
+  align-items: center;
+  gap: 10px;
+}
+
+.item-visuals-and-price {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between image and its price */
+}
+
+.item-image {
+  width: 70px; /* Image size from Figma */
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px; /* Rounded corners for image */
+}
+
+.item-price {
+  font-size: 1rem; /* 16px */
+  font-weight: 500; /* Medium weight */
+  font-family: 'Instrument Sans', sans-serif;
+  color: #FFFFFF;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  background-color: #383838; /* Background of quantity selector from Figma */
+  border-radius: 5px; /* Rounded corners from Figma */
+  padding: 4px; /* Internal padding */
+}
+
+.quantity-selector button {
+  background-color: transparent; /* No background for +/- buttons */
+  color: #FFFFFF;
+  border: none;
+  font-size: 1.25rem; /* 20px, for '-' and '+' symbols */
+  font-weight: normal; /* As per Figma */
+  cursor: pointer;
+  padding: 4px 10px;
+  line-height: 1;
+}
+.quantity-selector button:hover:not(:disabled) {
+  color: #CCCCCC; /* Slight hover effect for buttons */
+}
+.quantity-selector button:disabled {
+  color: #666666; /* Muted color for disabled state */
+  cursor: not-allowed;
+}
+
+.quantity-selector span { /* The quantity number itself */
+  margin: 0 10px; /* Space around the number */
+  font-size: 1rem; /* 16px */
+  font-family: 'Instrument Sans', sans-serif;
+  min-width: 20px; /* To prevent squishing with multi-digit numbers */
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.checkout-button-container {
+  text-align: center; /* Center the button */
+  margin-top: 40px; /* Space above the button */
+}
+
+.checkout-button {
+  background-color: #FFB366; /* Peach/orange button color from Figma */
+  color: #000000; /* Black text on button from Figma */
+  border: none;
+  padding: 16px 50px; /* Generous padding for a prominent button */
+  font-size: 1.125rem; /* 18px */
+  font-weight: bold;
+  font-family: 'Instrument Sans', sans-serif;
+  border-radius: 30px; /* Pill shape from Figma */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Subtle shadow */
+}
+
+.checkout-button:hover:not(:disabled) {
+  background-color: #FFA04D; /* Darker shade on hover */
+  transform: translateY(-1px) scale(1.02); /* Slight lift and scale effect */
+}
+.checkout-button:disabled {
+  background-color: #585858; /* Darker grey for disabled state */
+  color: #888888;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none; /* No hover effect when disabled */
+}
+
+.cart-item-card {
+  /* ... existing styles ... */
+  display: flex; /* Ensure flex for easier child management if not already */
+  flex-direction: column; /* Stack header, body, actions */
+  justify-content: space-between; /* Pushes actions to bottom if card has fixed height */
+  /* Add some padding to the bottom if the button looks too close to the card edge */
+  /* padding-bottom: 15px; */
+}
+
+.item-actions {
+  margin-top: 15px; /* Space above the remove button */
+  display: flex; /* To center the button if needed, or align it */
+  justify-content: flex-start; /* Aligns button to the left by default, or use center */
+}
+
+.item-remove-button {
+  background-color: #FFB366; /* Peach/orange color like the main "Check Out" button */
+  color: #2C003E; /* Dark purple text, similar to card background for contrast */
+  border: none;
+  padding: 8px 20px; /* Adjust padding as needed */
+  font-size: 0.9rem;  /* Adjust font size as needed */
+  font-weight: bold;
+  font-family: 'Instrument Sans', sans-serif; /* Match other button fonts */
+  border-radius: 20px; /* Pill shape or more rounded like Figma */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+ 
+}
+
+.item-remove-button:hover {
+  background-color: #FFA04D; /* Darker shade on hover */
+  transform: translateY(-1px);
+}
+
+.item-remove-button:active {
+  transform: translateY(0);
+}
+
+
+
+
+:root {
+  /* Colors */
+  --color-primary-purple: #5D3FD3;
+  --color-primary-purple-light: #7A5FD3;
+  --color-secondary-peach: #FFDAB9;
+  --color-secondary-peach-dark: #FFA07A;
+  --color-text-light: #FFFFFF;
+  --color-text-dark: #333333;
+  --color-text-gray: #757575;
+  --color-background-light: #F8F8F8;
+  --color-background-dark: #1A1A1A;
+  --color-background-dark-lighter: #2C2C2C;
+  --color-accent-green: #A0C888;
+  --color-accent-pink: #F2C2CE;
+  --color-accent-yellow-green: #BDCE62;
+  --color-error-red: #D32F2F;
+  --color-success-green: #388E3C;
+  --color-light-gray-border: #E0E0E0;
+  --color-neutral-gray: #BDBDBD;
+  --color-input-background: #FFFFFF;
+  --color-input-placeholder: #A0A0A0;
+
+  /* Fonts */
+  --font-main: 'Helvetica', Arial, sans-serif;
+  --font-heading: "Times New Roman", Times, serif; /* Ensure "Inrai Serif" is loaded via @font-face if custom */
+
+  /* Font Sizes */
+  --font-size-small: 0.875rem;  /* 14px */
+  --font-size-medium: 1rem;     /* 16px */
+  --font-size-large: 1.25rem;   /* 20px */
+  --font-size-xlarge: 1.5rem;   /* 24px */
+  --font-size-xxlarge: 2rem;    
+  --font-size-hero: 3rem;      
+
+  /* Spacing */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-s: 0.5rem;   /* 8px */
+  --spacing-m: 1rem;     /* 16px */
+  --spacing-l: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;    /* 32px */
+  --spacing-xxl: 3rem;   /* 48px */
+
+  /* UI Elements */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --header-height: 70px;
+  --footer-height: 200px; /* Approximate */
+
+  /* Gradient Backgrounds */
+  --gradient-primary: linear-gradient(135deg, #101010 0%, #670097 100%);
+  --gradient-products: linear-gradient(135deg, #101010 0%, #670097 100%);
+  --gradient-details: linear-gradient(135deg, #101010 0%, #670097 100%);
+  --gradient-faq: linear-gradient(135deg, #101010 0%, #670097 100%);
+  --gradient-design: linear-gradient(135deg, #F3E7E9 0%, #E3EEFF 99%, #E3EEFF 100%);
+  --gradient-cart: linear-gradient(135deg, #101010 0%, #670097 100%);
+  --gradient-checkout: linear-gradient(135deg, #101010 0%, #670097 100%);
+}
+
+.user-profile-page {
+  min-height: 100vh;
+  background: var(--gradient-primary, linear-gradient(135deg, #101010 0%, #670097 100%));
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 30px;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary-purple);
+  margin-bottom: var(--spacing-m);
+  line-height: 1.3;
+}
+
+h1 { font-size: var(--font-size-xxlarge); }
+h2 { font-size: var(--font-size-xlarge); }
+h3 { font-size: var(--font-size-large); }
+
+
+a {
+  color: var(--color-primary-purple);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-primary-purple-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* NEW: Styles for the container holding the action buttons */
+/* This will center both buttons as requested. */
+.checkout-actions-container {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center;
+  gap: 1.5rem; /* Space between the two buttons */
+  margin-top: 40px; /* Same margin-top as the old container */
+  flex-wrap: wrap; /* Allows buttons to stack on very small screens */
+}
+
+/* NEW: Styles for the "Clear Cart" button */
+.clear-cart-button {
+  background-color: transparent; /* Make it a "ghost" button */
+  color: #FFA07A; /* Use a color that fits the theme for text */
+  border: 2px solid #FFA07A; /* Matching border */
+  padding: 14px 48px; /* Slightly less vertical padding than main button */
+  font-size: 1.125rem; /* 18px, same as checkout button */
+  font-weight: bold;
+  font-family: 'Instrument Sans', sans-serif;
+  border-radius: 30px; /* Pill shape to match checkout button */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-cart-button:hover:not(:disabled) {
+  background-color: #FFA07A; /* Fill with color on hover */
+  color: #000000; /* Use black text to match checkout button's active state */
+  transform: translateY(-1px);
+}
+
+.clear-cart-button:disabled {
+  border-color: #585858;
+  color: #888888;
+  background-color: transparent;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* This rule for the old container is no longer needed for layout here, */
+/* but we can leave it in case it's used elsewhere. */
+.checkout-button-container {
+  text-align: center; 
+  margin-top: 40px; 
+}
+
+button:hover {
+    background-color: var(--color-primary-purple-light);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Example secondary button style */
+button.secondary {
+    background-color: var(--color-secondary-peach);
+    color: var(--color-text-dark);
+}
+button.secondary:hover {
+    background-color: var(--color-secondary-peach-dark);
+}
+
+
+input, textarea, select {
+  font-family: var(--font-main);
+  padding: var(--spacing-s);
+  border: 1px solid var(--color-light-gray-border);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-medium);
+  background-color: var(--color-input-background);
+  color: var(--color-text-dark);
+  width: 100%; /* Common default for form inputs to take full width of container */
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-input-placeholder);
+  opacity: 1; /* Firefox fix */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary-purple);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary-purple-light) 30%, transparent); /* Light purple glow */
+}
+
+/* Page-specific backgrounds */
+.products-page {
+  min-height: 100vh;
+  background: var(--gradient-products);
+}
+
+.product-detail-page {
+  min-height: 100vh;
+  background: var(--gradient-details);
+}
+
+.faq-page {
+  min-height: 100vh;
+  background: var(--gradient-faq);
+}
+
+.design-page {
+  min-height: 100vh;
+  background: var(--gradient-design);
+}
+
+.shopping-cart-page {
+  min-height: 100vh;
+  background: var(--gradient-cart);
+}
+
+.checkout-page {
+  min-height: 100vh;
+  background: var(--gradient-checkout);
+}
+
+/* Ensure content takes full height */
+#root {
+  min-height: 100vh;
+}
+
+/* Utility classes (optional, but can be helpful) */
+.text-center {
+  text-align: center;
+}
+
+.mb-s { margin-bottom: var(--spacing-s); }
+.mb-m { margin-bottom: var(--spacing-m); }
+.mb-l { margin-bottom: var(--spacing-l); }
+
+.mt-s { margin-top: var(--spacing-s); }
+.mt-m { margin-top: var(--spacing-m); }
+.mt-l { margin-top: var(--spacing-l); }
+
