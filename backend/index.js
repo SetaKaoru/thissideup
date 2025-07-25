@@ -6,12 +6,14 @@ const jwt = require('jsonwebtoken')
 const cors = require('cors');
 const path = require('path');
 const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
 
 // app.use(cors());
 app.use(cors({
   origin: 'https://thissideup-react.onrender.com',
-  credentials: true // if you're using cookies or auth
+  credentials: true
 }));
 app.use(express.json());
 
@@ -37,43 +39,39 @@ app.get("/", (req, res) =>{
 // app.use('/images', express.static(path.join(__dirname, 'upload/images')));
 // app.use('/images', express.static('upload/images'))
 
-
-
-app.post('/upload', upload.single('product'), (req, res) => {
-  // multer-storage-cloudinary puts the result in req.file
-  if (!req.file) {
-    return res.status(400).json({ success: 0, message: 'No file uploaded' });
-  }
-
-  // The uploaded image URL is in req.file.path
-  res.json({
-    success: 1,
-    image_url: req.file.path
-  });
-});
-
-
-const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
-
-// Configure Cloudinary with your credentials
 cloudinary.config({
   cloud_name: 'damxx6ssi',
   api_key: '169295522518884',
-  api_secret: '**********'
+  api_secret: 'GcLkd1du2BGzx6uQPyh4qg4hXZY'
 });
 
 // Set up Cloudinary Storage for multer
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'products', // optional: folder in Cloudinary to store images
+    folder: 'products',
     allowed_formats: ['jpg', 'jpeg', 'png', 'gif'],
     transformation: [{ width: 800, height: 800, crop: 'limit' }]
   },
 });
 
 const upload = multer({ storage: storage });
+
+
+// Upload Image
+app.post('/upload', upload.single('product'), async (req, res) => {
+  try {
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: 'products',
+    });
+    res.json({ success: true, image_url: result.secure_url });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Upload failed" });
+  }
+});
+
+
 
 
 
