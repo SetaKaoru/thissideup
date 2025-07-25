@@ -157,7 +157,7 @@ const OrderDetails = () => {
 
   useEffect(() => {
     fetchInfo();
-  });
+  }, []);
 
   useEffect(() => {
   if (order) {
