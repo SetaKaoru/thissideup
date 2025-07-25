@@ -61,10 +61,7 @@ const upload = multer({ storage: storage });
 // Upload Image
 app.post('/upload', upload.single('product'), async (req, res) => {
   try {
-    const result = await cloudinary.uploader.upload(req.file.path, {
-      folder: 'products',
-    });
-    res.json({ success: true, image_url: result.secure_url });
+    res.json({ success: true, image_url: req.file.path });
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: "Upload failed" });
