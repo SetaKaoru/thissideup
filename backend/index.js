@@ -23,27 +23,59 @@ app.get("/", (req, res) =>{
 })
 
 // Image Storage
-const storage = multer.diskStorage({
-    destination: './upload/images',
-    filename:(req, file, cb)=>{
-        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-    }
-})
+// const storage = multer.diskStorage({
+//     destination: './upload/images',
+//     filename:(req, file, cb)=>{
+//         return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+//     }
+// })
 
 
 
-const upload = multer({storage: storage});
+// const upload = multer({storage: storage});
 
-app.use('/images', express.static(path.join(__dirname, 'upload/images')));
+// app.use('/images', express.static(path.join(__dirname, 'upload/images')));
+// app.use('/images', express.static('upload/images'))
 
-app.use('/images', express.static('upload/images'))
 
-app.post("/upload", upload.single('product'), (req, res)=>{
-    res.json({
-        success:1, 
-        image_url: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
-    })
+
+app.post('/upload', upload.single('product'), (req, res) => {
+  // multer-storage-cloudinary puts the result in req.file
+  if (!req.file) {
+    return res.status(400).json({ success: 0, message: 'No file uploaded' });
+  }
+
+  // The uploaded image URL is in req.file.path
+  res.json({
+    success: 1,
+    image_url: req.file.path
+  });
 });
+
+
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+
+// Configure Cloudinary with your credentials
+cloudinary.config({
+  cloud_name: 'damxx6ssi',
+  api_key: '169295522518884',
+  api_secret: '**********'
+});
+
+// Set up Cloudinary Storage for multer
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'products', // optional: folder in Cloudinary to store images
+    allowed_formats: ['jpg', 'jpeg', 'png', 'gif'],
+    transformation: [{ width: 800, height: 800, crop: 'limit' }]
+  },
+});
+
+const upload = multer({ storage: storage });
+
+
 
 // Schema for Creating Products
 const Product = mongoose.model("Product", {
