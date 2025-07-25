@@ -386,7 +386,7 @@ const DesignSkimboard = () => {
 
         // First: Add the custom board to the database
         // const response = await fetch('http://localhost:4000/addcustomboard', {
-        const response = fetch(`${process.env.REACT_APP_API_URL}/addcustomboard`,{
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/addcustomboard`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
