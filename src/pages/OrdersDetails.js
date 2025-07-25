@@ -193,7 +193,7 @@ const handleSubmit = async (e) => {
     await updateStatus(id, {
       status: currentUser.role === 'Customer' ? 'Order Completed' : status,
     });
-    alert('Order is complete!');
+    alert('Order updated!');
   } catch (err) {
     setError(err.message || 'Failed to update status.');
   }
