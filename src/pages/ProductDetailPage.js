@@ -470,7 +470,7 @@ const handleAddToCart = async () => {
   } else {
     try {
       // const res = await fetch(`http://localhost:4000/products/${product.id}/like`, {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/${product.id}/like`,{
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/products/${product.id}/like`,{
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
