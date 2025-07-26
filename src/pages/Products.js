@@ -127,7 +127,8 @@ const productCategories = [
    'Skimboards',
    'T-Shirts',
    'Boardshorts',
-   'Accessories',  
+   'Accessories',
+   'Apparel',  
    'Jackets',
  ];
 

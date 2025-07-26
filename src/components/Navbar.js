@@ -192,6 +192,7 @@ const Navbar = () => {
     { name: 'T-Shirts', path: '/products/category/T-Shirts' },
     { name: 'Board Shorts', path: '/products/category/Boardshorts' },
     { name: 'Accessories', path: '/products/category/Accessories' },
+    { name: 'Apparel', path: '/products/category/Apparel' },
     { name: 'Jackets', path: '/products/category/Jackets' }
   ];
 
